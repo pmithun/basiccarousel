@@ -1,0 +1,174 @@
+<html>
+	<head>
+		<style>
+		@font-face {
+					font-family: 'opensansregular';
+					src: url('OpenSans-Regular.ttf');
+		}
+
+		@font-face {
+					font-family: 'opensanslight';
+					src: url('OpenSans-Light.ttf');
+		}
+		body{
+					font-family: 'opensanslight';
+					transition:all 1s ease;
+					padding: 0px;
+					margin: 0px;
+					background: #1e212d;
+					overflow: hidden;
+		}
+		.testimonial-wrap{
+					width: 600px;
+					height: 300px;
+					position: relative;
+					margin: 0px auto;
+					padding: 0px;
+		}
+		.h2test {
+					margin-top: 40px;
+					#font-weight: 400;
+					color: #fff;
+					margin-bottom: 40px;
+					font-family: 'opensansregular';
+					#clear: both;
+					position: relative;
+					left: 22px;
+		}
+		.centered-text {
+					text-align: center;
+		}
+		.quote {
+					background: #ebf3f5;
+					padding: 15px 20px 5px 15px;
+					border-radius: 5px;
+					margin-bottom: 30px;
+					height: 90px;
+		}
+		.quote p{
+			text-align: center;
+		}
+		.quote:after {
+				  content: '';
+				  width: 0px;
+				  height: 0px;
+				  border-style: solid;
+				  border-width: 20px 18px 0 18px;
+				  border-color: #ebf3f5 transparent transparent transparent;
+				  position: relative;
+				  top: 37px;
+				  left: 20px;
+		}
+		.student {
+				  margin-left: 25px;
+				  margin-bottom: 80px;
+		}
+		.student .photo {
+				  background-color: #ccc;
+				  border-radius: 100px;
+				  width: 60px;
+				  height: 60px;
+				  float: left;
+				  margin-right: 15px;
+		}
+		.student p {
+				  position: relative;
+				  top: 5px;
+				  text-transform: uppercase;
+		}
+		.student p:nth-child(2) {
+				  font-size: 16px;
+				  font-weight: 600;
+				  margin-bottom: 0;
+				  color: rgb(171, 227, 242);
+		}
+		.student p:nth-child(3) {
+				  font-size: 14px;
+				  color: rgb(235, 243, 245);
+				  top: 0px;
+		}
+		</style>
+		<script>
+		function GetDisplayBlock(elements) {
+			var DisplayBlock = -1;
+			for(var i = 0; i < elements.length; i++) {
+				if(elements[i].style.display == "block") {
+					DisplayBlock = i;
+				}
+			}
+			return DisplayBlock;
+		}
+		function prev(ElementNum, arrayLength) {
+			if(ElementNum == 0) return arrayLength-1;
+			else return ElementNum-1;
+		}
+		function next(ElementNum, arrayLength) {
+			if(ElementNum == arrayLength-1) return 0;
+			else return ElementNum+1;
+		}
+		function carousel(show) {
+			var elements = document.getElementsByClassName("hide");
+			var DisplayBlock = GetDisplayBlock(elements);
+			elements[DisplayBlock].style.display = "none";
+			if(!show) {
+				var makeVisible = prev(DisplayBlock, elements.length);
+			} else {
+				var makeVisible = next(DisplayBlock, elements.length);
+			}
+			elements[makeVisible].style.display = "block";
+		}
+		</script>
+	</head>
+	<body>
+		<p style="background-color:#F9B248; width:100%; padding:8px; color:#000; font-size:12px; text-align:center; font-weight:bold;">Assignment project for YoungCurrent - <i><b>Basic Text Carousel</b></i></p>
+		<div style=" width: 100%; height: 535px; padding: 130px 0px 0px 0px; display: block;">
+		<div class="testimonial-wrap">
+			<img onclick="carousel(false)" class="prev" style="float: left; position: relative; left: -100px; top: 90px; cursor: pointer;" src="left64.png"/>
+			<h2 class="h2test">Look what our readers have to say!</h2>
+			<img onclick="carousel(true)" class="next" style="float: right; position: relative; right: -100px; top: 20px; cursor: pointer" src="right64.png"/>
+			<div class="row">
+				<div class="hide" style="display: block; transition: display 2s linear;">
+					<div class="quote">
+						<p>With customised reports and news from different parts of the world, YoungCurrent is the perfect e-news reading tool.</p>
+					</div>
+					<div class="student">
+						<div> <img style="border-radius: 100px; border: 5px solid #CC2020; width: 60px; height: 60px; float: left; margin-right: 10px;" src="test1.png" /></div>
+						<p>KidsStopPress</p>
+						<p>Parent Review - (18 May, 2015)</p>
+					</div>
+				</div><!-- end testimonial-one -->
+				<div class="hide" style="display: none;">
+					<div class="quote">
+						<p>Harvard graduate's YoungCurrent helps make news an interesting affair for kids.</p>
+					</div>
+					<div class="student">
+						<div> <img style="border-radius: 100px; border: 5px solid #2A8628; width: 60px; height: 60px; float: left; margin-right: 10px; " src="test2.png" /></div>
+						<p>YourStory</p>
+						<p>Press Review - (6 May, 2015)</p>
+					</div>
+				</div><!-- end testimonial-two -->
+				<div class="hide" style="display: none;">
+					<div class="quote">
+						<p>All the News That's Fit to Read. Curates contents according to student grades, awesome!</p>
+					</div>
+					<div class="student">
+						<div> <img style="border-radius: 100px; border: 5px solid #4FB490; width: 60px; height: 60px; float: left; margin-right: 10px; " src="test3.png" /></div>
+						<p>Harvard's Ed Magazine</p>
+						<p>Education magazine - (9 Jan, 2015)</p>
+					</div>
+				</div><!-- end testimonial-three -->
+				<div class="hide" style="display: none;">
+					<div class="quote">
+						<p>YoungCurrent one of the Young Startups representing India at Startup Chile.</p>
+					</div>
+					<div class="student">
+						<div ><img style="border-radius: 100px; border: 5px solid #5550AD; width: 60px; height: 60px; float: left; margin-right: 10px;" src="test4.png" /> </div>
+						<p>Economic Times</p>
+						<p>Startup Agregator platform - (16 Dec, 2014)</p>
+					</div>
+				</div><!-- end testimonial-four -->
+			</div><!-- end row wrap -->
+		</div><!-- end testimonial wrap -->
+		</div>
+	</body>
+</html>
